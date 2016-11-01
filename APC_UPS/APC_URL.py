@@ -22,7 +22,7 @@ def request(URL):
         blankArray.append([URL, "Protected Resource, False Positive"])
     else:
         try:
-            datapoint = {'login_username':'device', 'login_password':'apc', }
+            datapoint = {'login_username':'device', 'login_password':'apc'}
             postRequest = requests.post("http://" + URL + "/Forms/login1", data=datapoint, allow_redirects=True)
             if "Invalid User Name or Password." in postRequest.text:
                 blankArray.append([URL, "Invalid Credentials, Changed From Default"])
